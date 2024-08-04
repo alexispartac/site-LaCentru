@@ -1,0 +1,172 @@
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --hoverColor : rgb(160, 160, 160);
+    --continutColor : rgb(203, 203, 203); 
+    --continerColor : rgba(6, 58, 6, 0.842);
+    --headerColor : rgba(190, 133, 63, 0.507);
+}
+
+body{
+    margin: 0;
+}
+
+/* navigation */
+.nav {
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    z-index: 1;
+    border-bottom: 1px solid rgb(28, 109, 62);
+    background-color: rgba(0, 0, 0, 0.729);
+    color: white;
+}
+.nav img{
+    height: inherit;
+    margin-left: 100px;
+    border-radius: 10px;
+    image-rendering: auto;
+}
+.nav h1{
+    display: inline;
+    padding: 0px 10px;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    position: relative;
+    top: -10px;
+}
+.menu{
+    list-style: none;
+    display: inline-block;
+    float: right;
+    margin-right: 100px;
+}
+
+.menu li{
+    display: inline;
+    padding: 10px 20px;
+}
+
+.menu li:hover{
+    color: var(--hoverColor) ;
+    cursor: pointer;
+}
+
+.menu-vertical{
+    visibility: hidden;
+    position: fixed;
+    top: 50px;
+    list-style: none;
+    float: left;
+    background-color: rgb(28, 90, 51);
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    padding: 20px 0;
+    height: 900px;
+    opacity: 0.9;
+}
+
+.menu-vertical li{
+    display: block;
+    padding: 10px 60px;
+    font-size: larger;
+    border-bottom: 1px solid black;
+    text-align: center;
+} 
+
+.menu-vertical li:hover{
+    color: var(--hoverColor);
+    cursor: pointer;
+}
+
+.button-menu{
+    position: absolute;  
+    left: -80px;
+    z-index: 1;
+    padding: 10px;
+    border: 0;
+    color: white;
+    cursor: pointer;
+}
+
+.visible{
+    visibility: visible;
+}
+
+.button-menu:hover{
+    background-color: rgba(49, 49, 49, 0.849);
+}
+
+/* header */
+
+.header-background{
+    position: relative;
+    top: 0;
+    opacity: 0.95;
+    height: 600px;
+    width: 100%;
+}
+
+/* content */
+
+.continut{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    align-content: center;
+    margin: 70px 200px;
+    gap: 30px;
+}
+
+.continut h1{
+    margin-left: 20px;
+    color: white;
+    padding: 10px;
+    background-color: var(--continerColor);
+    border-bottom: 1px solid black;
+    width: 100%;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.continer-prep{
+    width: 31.545%;
+    padding: 20px;
+    padding: 40px;
+    background-color: white;
+    box-shadow: 0.1rem 0.225rem 0.45rem 0.4rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.val, .val p{
+    margin: 2px;
+}
+
+.search-bar{
+    width: 100%;
+}
+
+#cl{
+    display: flex;
+    height: 30px;
+    margin:5px
+}
+
+.search-bar input{
+    width: 30px;
+    height: inherit;
+    align-items: left;
+    margin: 0;
+}
+
+.search-bar label{
+    font-size: 20px;
+    height: inherit;
+    margin-left: 10px;
+    padding-top: 5px;
+}
+

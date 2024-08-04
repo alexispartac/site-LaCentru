@@ -1,0 +1,418 @@
+{
+    "preparate":[
+        {
+            "categorie": "pizza",
+            "imagine": "/public/imagini/pizza/la-centru.png",
+            "denumire": "pizza LA CENTRU",
+            "cantitate": 750,
+            "pret": 32,
+            "ingrediente":[
+                                { 
+                                    "denumire": "aluat pizza",
+                                    "gramaj": 300
+                                },
+                                { 
+                                    "denumire": "sos pizza",
+                                    "gramaj": 90
+                                },
+                                { 
+                                    "denumire": "mozarella",
+                                    "gramaj": 190
+                                },
+                                { 
+                                    "denumire": "carnati afumati",
+                                    "gramaj": 80
+                                },
+                                { 
+                                    "denumire": "sunca pizza",
+                                    "gramaj": 60
+                                },
+                                { 
+                                    "denumire": "masline negre",
+                                    "gramaj": 20
+                                },
+                                { 
+                                    "denumire": "ardei capia",
+                                    "gramaj": 30
+                                },
+                                { 
+                                    "denumire": "ceapa rosie",
+                                    "gramaj": 20
+                                },
+                                { 
+                                    "denumire": "porumb",
+                                    "gramaj": 20
+                                }
+            ],
+            "val_nut": [
+                {
+                    "valoare_energetica": "250KCal",
+                    "grasimi": "8g",
+                    "acizi_grasi_saturati": "44g",
+                    "glucide": "30g",
+                    "zaharuri": "0.45g",
+                    "proteine": "13g",
+                    "sare": "1g"
+                }
+            ]
+        },
+        {
+            "categorie": "pizza",
+            "imagine":"/public/imagini/pizza/traditionala.png",
+            "denumire": "pizza traditionala",
+            "cantitate": 750,
+            "pret": 30,
+            "ingrediente":[
+                                { 
+                                    "denumire": "aluat pizza",
+                                    "gramaj": 300
+                                },
+                                { 
+                                    "denumire": "sos pizza",
+                                    "gramaj": 90
+                                },
+                                { 
+                                    "denumire": "mozarella",
+                                    "gramaj": 190
+                                },
+                                { 
+                                    "denumire": "bacon afumat",
+                                    "gramaj": 80
+                                },
+                                { 
+                                    "denumire": "salam de vara",
+                                    "gramaj": 80
+                                },
+                                { 
+                                    "denumire": "masline negre",
+                                    "gramaj": 80
+                                },
+                                { 
+                                    "denumire": "ardei capia",
+                                    "gramaj": 40
+                                },
+                                { 
+                                    "denumire": "ciuperci brune",
+                                    "gramaj": 50
+                                }
+            ],
+            "val_nut": [
+                {
+                    "valoare_energetica": "260KCal",
+                    "grasimi": "10g",
+                    "acizi_grasi_saturati": "50g",
+                    "glucide": "28g",
+                    "zaharuri": "0.45g",
+                    "proteine": "14g",
+                    "sare": "0.8g"
+                }
+            ]
+        },
+        {
+            "categorie": "pizza",
+            "imagine":"/public/imagini/pizza/country.png",
+            "denumire": "pizza country",
+            "cantitate": 710,
+            "pret": 31,
+            "ingrediente":[
+                                { 
+                                    "denumire": "aluat pizza",
+                                    "gramaj": 300
+                                },
+                                { 
+                                    "denumire": "sos pizza",
+                                    "gramaj": 90
+                                },
+                                { 
+                                    "denumire": "mozarella",
+                                    "gramaj": 190
+                                },
+                                { 
+                                    "denumire": "bacon afumat",
+                                    "gramaj": 150
+                                },
+                                { 
+                                    "denumire": "porumb",
+                                    "gramaj": 10
+                                },
+                                { 
+                                    "denumire": "ceapa rosie",
+                                    "gramaj": 20
+                                },
+                                { 
+                                    "denumire": "ciuperci brune",
+                                    "gramaj": 70
+                                }
+            ],
+            "val_nut": [
+                {
+                    "valoare_energetica": "246KCal",
+                    "grasimi": "8.11g",
+                    "acizi_grasi_saturati": "4,5g",
+                    "glucide": "29.55g",
+                    "zaharuri": "0.36g",
+                    "proteine": "14g",
+                    "sare": "0.75g"
+                }
+            ]
+        },
+        {
+            "categorie": "pizza",
+            "imagine":"/public/imagini/pizza/roberto.png",
+            "denumire": "pizza roberto",
+            "cantitate": 730,
+            "pret": 32,
+            "ingrediente":[
+                                { 
+                                    "denumire": "aluat pizza",
+                                    "gramaj": 300
+                                },
+                                { 
+                                    "denumire": "sos pizza",
+                                    "gramaj": 90
+                                },
+                                { 
+                                    "denumire": "mozarella",
+                                    "gramaj": 190
+                                },
+                                { 
+                                    "denumire": "bacon afumat",
+                                    "gramaj": 110
+                                },
+                                { 
+                                    "denumire": "gorgonzola dolce",
+                                    "gramaj": 50
+                                },
+                                { 
+                                    "denumire": "rosii cherry",
+                                    "gramaj": 50
+                                },
+                                { 
+                                    "denumire": "rucola",
+                                    "gramaj": 10
+                                },
+                                { 
+                                    "denumire": "ardei capia",
+                                    "gramaj": 20
+                                },
+                                { 
+                                    "denumire": "grana padano",
+                                    "gramaj": 10
+                                },
+                                { 
+                                    "denumire": "crema otet balsamic"
+                                }
+            ],
+            "val_nut": [
+                {
+                    "valoare_energetica": "266KCal",
+                    "grasimi": "9.5g",
+                    "acizi_grasi_saturati": "5.58g",
+                    "glucide": "30g",
+                    "zaharuri": "0.35g",
+                    "proteine": "14.39g",
+                    "sare": "0.5g"
+                }
+            ]
+        },
+        {
+            "categorie": "pizza",
+            "imagine":"/public/imagini/pizza/capriciossa.png",
+            "denumire": "pizza capriciossa",
+            "cantitate": 670,
+            "pret": 29,
+            "ingrediente":[
+                                { 
+                                    "denumire": "aluat pizza",
+                                    "gramaj": 300
+                                },
+                                { 
+                                    "denumire": "sos pizza",
+                                    "gramaj": 90
+                                },
+                                { 
+                                    "denumire": "mozarella",
+                                    "gramaj": 190
+                                },
+                                { 
+                                    "denumire": "salam pizza",
+                                    "gramaj": 50
+                                },
+                                { 
+                                    "denumire": "prosciutto cotto",
+                                    "gramaj": 50
+                                },
+                                { 
+                                    "denumire": "ciuperci brune",
+                                    "gramaj": 20
+                                },
+                                { 
+                                    "denumire": "masline negre",
+                                    "gramaj": 20
+                                },
+                                { 
+                                    "denumire": "anghinare",
+                                    "gramaj": 40
+                                }
+            ],
+            "val_nut": [
+                {
+                    "valoare_energetica": "263KCal",
+                    "grasimi": "8.6g",
+                    "acizi_grasi_saturati": "5g",
+                    "glucide": "32g",
+                    "zaharuri": "0.44g",
+                    "proteine": "13.56g",
+                    "sare": "0.98g"
+                }
+            ]
+        },
+        {
+            "categorie": "pizza",
+            "imagine":"/public/imagini/pizza/taraneasca.png",
+            "denumire": "pizza taraneasca",
+            "cantitate": 660,
+            "pret": 28,
+            "ingrediente":[
+                                { 
+                                    "denumire": "aluat pizza",
+                                    "gramaj": 300
+                                },
+                                { 
+                                    "denumire": "sos pizza",
+                                    "gramaj": 90
+                                },
+                                { 
+                                    "denumire": "mozarella",
+                                    "gramaj": 190
+                                },
+                                { 
+                                    "denumire": "cabanos",
+                                    "gramaj": 50
+                                },
+                                { 
+                                    "denumire": "sunca pizza",
+                                    "gramaj": 50
+                                },
+                                { 
+                                    "denumire": "ceapa rosie",
+                                    "gramaj": 20
+                                },
+                                { 
+                                    "denumire": "porumb",
+                                    "gramaj": 10
+                                }
+            ],
+            "val_nut": [
+                {
+                    "valoare_energetica": "261KCal",
+                    "grasimi": "7.72g",
+                    "acizi_grasi_saturati": "4.45g",
+                    "glucide": "33.61g",
+                    "zaharuri": "0.39g",
+                    "proteine": "13.13g",
+                    "sare": "0.8g"
+                }
+            ]
+        },
+        {
+            "categorie": "pizza",
+            "imagine":"/public/imagini/pizza/pro-e-funghi.png",
+            "denumire": "pizza prosciutto e funcghi",
+            "cantitate": 620,
+            "pret": 29,
+            "ingrediente":[
+                                { 
+                                    "denumire": "aluat pizza",
+                                    "gramaj": 300
+                                },
+                                { 
+                                    "denumire": "sos pizza",
+                                    "gramaj": 90
+                                },
+                                { 
+                                    "denumire": "mozarella",
+                                    "gramaj": 190
+                                },
+                                { 
+                                    "denumire": "prosciutto cotto",
+                                    "gramaj": 90
+                                },
+                                { 
+                                    "denumire": "ciuperci brune",
+                                    "gramaj": 50
+                                }
+            ],
+            "val_nut": [
+                {
+                    "valoare_energetica": "253KCal",
+                    "grasimi": "6.8g",
+                    "acizi_grasi_saturati": "4.2g",
+                    "glucide": "33.3g",
+                    "zaharuri": "0.38g",
+                    "proteine": "14.2g",
+                    "sare": "0.6g"
+                }
+            ]
+        },
+        {
+            "categorie": "pizza",
+            "imagine":"/public/imagini/pizza/xtravaganzza.png",
+            "denumire": "pizza xtravaganzza",
+            "cantitate": 710,
+            "pret": 32,
+            "ingrediente":[
+                                { 
+                                    "denumire": "aluat pizza",
+                                    "gramaj": 300
+                                },
+                                { 
+                                    "denumire": "sos pizza",
+                                    "gramaj": 90
+                                },
+                                { 
+                                    "denumire": "mozarella",
+                                    "gramaj": 190
+                                },
+                                { 
+                                    "denumire": "ardei iute",
+                                    "gramaj": 5
+                                },
+                                { 
+                                    "denumire": "ciuperci brune",
+                                    "gramaj": 10
+                                },
+                                { 
+                                    "denumire": "sunca pizza",
+                                    "gramaj": 100
+                                },
+                                { 
+                                    "denumire": "masline negre",
+                                    "gramaj": 10
+                                },
+                                { 
+                                    "denumire": "ardei capia",
+                                    "gramaj": 20
+                                },
+                                { 
+                                    "denumire": "ceapa rosie",
+                                    "gramaj": 20
+                                },
+                                { 
+                                    "denumire": "porumb",
+                                    "gramaj": 15
+                                }
+            ],
+            "val_nut": [
+                {
+                    "valoare_energetica": "242KCal",
+                    "grasimi": "6.5g",
+                    "acizi_grasi_saturati": "40g",
+                    "glucide": "32g",
+                    "zaharuri": "0.35g",
+                    "proteine": "12g",
+                    "sare": "0.75g"
+                }
+            ]
+        }
+    ]}
