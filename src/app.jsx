@@ -1,4 +1,10 @@
+// intrebari
+// ce este mai util, folosirea unei componente functionale sau de clasa
+// cum pot optimiza codul din TableProducts, partea cu useState, pot folosi useContext?
+
+
 // baza de date in mangoDb
+import React from 'react';
 import { useState, useEffect } from 'react';
 
 // nav component
@@ -285,7 +291,7 @@ import { useState, useEffect } from 'react';
 
             return(
                 <>
-                    <li className={'linie-orar'} key={zi}>
+                    <li className={'linie-orar'}>
                         <h2 style={{float:'left', color:`${color}`}}> {zi} </h2>
                         <h2 style={{float:'right', textAlign:'right'} } > {orar} </h2>
                     </li>
@@ -300,23 +306,23 @@ import { useState, useEffect } from 'react';
                 <div className='continut'>
                     <h1> Program obisnuit </h1>
                     <ul className='lista-orar' >
-                        <LinieOrar zi={'Luni'} orar={'09:00-23:00'}/>
-                        <LinieOrar zi={'Marti'} orar={'09:00-23:00'}/>
-                        <LinieOrar zi={'Miercuri'} orar={'09:00-23:00'}/>
-                        <LinieOrar zi={'Joi'} orar={'09:00-23:00'}/>
-                        <LinieOrar zi={'Vineri'} orar={'09:00-23:00'}/>
-                        <LinieOrar zi={'Sambata'} orar={'12:00-23:00'} color={'red'}/>
-                        <LinieOrar zi={'Duminica'} orar={'12:00-03:00'} color={'red'}/>
-                    </ul>
+                        <LinieOrar key={zi} zi={'Luni'} orar={'09:00-23:00'}/>
+                        <LinieOrar key={zi} zi={'Marti'} orar={'09:00-23:00'}/>
+                        <LinieOrar key={zi} zi={'Miercuri'} orar={'09:00-23:00'}/>
+                        <LinieOrar key={zi} zi={'Joi'} orar={'09:00-23:00'}/>
+                        <LinieOrar key={zi} zi={'Vineri'} orar={'09:00-23:00'}/>
+                        <LinieOrar key={zi} zi={'Sambata'} orar={'12:00-23:00'} color={'red'}/>
+                        <LinieOrar key={zi} zi={'Duminica'} orar={'12:00-03:00'} color={'red'}/>
+                    </ul >
                     <h1> Program Sarbatori </h1>
                     <ul className='lista-orar' >
-                        <LinieOrar zi={'Luni'} orar={'12:00-20:00'}/>
-                        <LinieOrar zi={'Marti'} orar={'12:00-20:00'}/>
-                        <LinieOrar zi={'Miercuri'} orar={'12:00-20:00'}/>
-                        <LinieOrar zi={'Joi'} orar={'12:00-20:00'}/>
-                        <LinieOrar zi={'Vineri'} orar={'12:00-20:00'}/>
-                        <LinieOrar zi={'Sambata'} orar={'12:00-19:00'} color={'red'}/>
-                        <LinieOrar zi={'Duminica'} orar={'12:00-22:00'} color={'red'}/>
+                        <LinieOrar key={zi} zi={'Luni'} orar={'12:00-20:00'}/>
+                        <LinieOrar key={zi} zi={'Marti'} orar={'12:00-20:00'}/>
+                        <LinieOrar key={zi} zi={'Miercuri'} orar={'12:00-20:00'}/>
+                        <LinieOrar key={zi} zi={'Joi'} orar={'12:00-20:00'}/>
+                        <LinieOrar key={zi} zi={'Vineri'} orar={'12:00-20:00'}/>
+                        <LinieOrar key={zi} zi={'Sambata'} orar={'12:00-19:00'} color={'red'}/>
+                        <LinieOrar key={zi} zi={'Duminica'} orar={'12:00-22:00'} color={'red'}/>
                     </ul>
                     <h1> Comenzile nu se preiau in afara programului!!!</h1>
                 </div>
