@@ -4,7 +4,7 @@
 }
 
 :root{
-    --hoverColor : rgb(160, 160, 160);
+    --hoverColor : rgba(160, 160, 160, 0.399);
     --continutColor : rgb(203, 203, 203); 
     --continerColor : rgba(6, 58, 6, 0.842);
     --headerColor : rgba(190, 133, 63, 0.507);
@@ -94,9 +94,6 @@ body{
     cursor: pointer;
 }
 
-.visible{
-    visibility: visible;
-}
 
 .button-menu:hover{
     background-color: rgba(49, 49, 49, 0.849);
@@ -131,20 +128,47 @@ body{
     border-bottom: 1px solid black;
     width: 100%;
     text-align: center;
-    margin: 40px 0;
+    margin: 0px;
 }
 
 .continer-prep{
-    width: 31.545%;
+    width: 353.05px;
     padding: 20px;
-    padding: 40px;
+    padding: 60px;
     background-color: white;
     box-shadow: 0.1rem 0.225rem 0.45rem 0.4rem rgba(0, 0, 0, 0.075) !important;
+    position: relative;
 }
+
 
 .val, .val p{
     margin: 2px;
 }
+
+.restrans {
+    height: 23px;
+    overflow: hidden;
+}
+
+.restrans:hover {
+    height: inherit;
+    overflow: visible;
+    cursor: pointer;
+}
+
+.transitions {  /**/
+    width: 100px;
+    height: 30px;
+    background-color: #f69d3c;
+    font-size: small;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: clip;
+    transition: 1s ease-out ;
+    padding: 10px;
+    color: aliceblue;
+  }
+
 
 .search-bar{
     width: 100%;
@@ -167,6 +191,103 @@ body{
     font-size: 20px;
     height: inherit;
     margin-left: 10px;
-    padding-top: 5px;
+    margin-top: 5px;
 }
 
+
+footer{
+    display: flex;
+    width: 100%;
+    height: 60px;
+}
+
+footer p{
+    text-align: center;
+    margin: auto;
+}
+
+.submit-info {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    
+}
+
+.continer-prep button{
+    width: 200px;
+    height: 50px;
+    margin: auto;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: var(--continerColor);
+    color: white;
+    position: absolute;
+    left: 30px;
+    bottom: 10px;
+}
+
+.continer-prep button:hover, .numaratoare:hover, .button-comanda:hover, .button-finalizare:hover{
+    border: 2px solid var(--continerColor);
+    background-color: var(--hoverColor);
+    color: var(--continerColor);
+    cursor: pointer;
+}
+
+.numaratoare{
+    position: absolute;
+    top: -55px;
+    left: 250px;
+    width: 40px;
+    height: 40px;
+    color: white;
+    background-color: var(--continerColor);
+    box-shadow: 0.1rem 0.225rem 0.45rem 0.4rem rgba(0, 0, 0, 0.075) !important;
+    float: right;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+
+
+.numaratoare h3{
+    margin: 10px 6px;
+}
+
+
+
+.button-comanda, .button-finalizare{
+    display: block;
+    float: left;
+    width: 200px;
+    height: 50px;
+    margin: 0px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: var(--continerColor);
+    color: white;
+}
+
+.comanda{
+    width: 100%;
+    visibility: hidden;
+    margin: 20px;
+}
+
+.lista-orar {
+    width: 100%;
+    list-style: none;
+    padding: 50px 100px;
+    margin: 0;
+    border: 2px solid var(--continerColor)
+}
+
+.linie-orar > h2{
+    width: 50%;
+    display: inline;
+    border-bottom: 1px solid var(--continerColor);
+}
+
+.visible{
+    visibility: visible;
+}
+/* content end */

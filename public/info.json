@@ -6,6 +6,9 @@
             "denumire": "pizza LA CENTRU",
             "cantitate": 750,
             "pret": 32,
+            "id": 1,
+            "comanda": false,
+            "cantitiateComanda": 10,
             "ingrediente":[
                                 { 
                                     "denumire": "aluat pizza",
@@ -62,6 +65,9 @@
             "denumire": "pizza traditionala",
             "cantitate": 750,
             "pret": 30,
+            "id":2,
+            "comanda": true,
+            "cantitiateComanda": 1,
             "ingrediente":[
                                 { 
                                     "denumire": "aluat pizza",
@@ -114,6 +120,9 @@
             "denumire": "pizza country",
             "cantitate": 710,
             "pret": 31,
+            "id": 3,
+            "comanda": true,
+            "cantitiateComanda": 10,
             "ingrediente":[
                                 { 
                                     "denumire": "aluat pizza",
@@ -162,6 +171,9 @@
             "denumire": "pizza roberto",
             "cantitate": 730,
             "pret": 32,
+            "id": 4,
+            "comanda": true,
+            "cantitiateComanda": 10,
             "ingrediente":[
                                 { 
                                     "denumire": "aluat pizza",
@@ -221,6 +233,9 @@
             "denumire": "pizza capriciossa",
             "cantitate": 670,
             "pret": 29,
+            "id": 5,
+            "comanda": true,
+            "cantitiateComanda": 10,
             "ingrediente":[
                                 { 
                                     "denumire": "aluat pizza",
@@ -273,6 +288,9 @@
             "denumire": "pizza taraneasca",
             "cantitate": 660,
             "pret": 28,
+            "id": 6,
+            "comanda": true,
+            "cantitiateComanda": 10,
             "ingrediente":[
                                 { 
                                     "denumire": "aluat pizza",
@@ -321,6 +339,9 @@
             "denumire": "pizza prosciutto e funcghi",
             "cantitate": 620,
             "pret": 29,
+            "id": 7,
+            "comanda": true,
+            "cantitiateComanda": 10,
             "ingrediente":[
                                 { 
                                     "denumire": "aluat pizza",
@@ -361,6 +382,9 @@
             "denumire": "pizza xtravaganzza",
             "cantitate": 710,
             "pret": 32,
+            "id": 9,
+            "comanda": true,
+            "cantitiateComanda": 10,
             "ingrediente":[
                                 { 
                                     "denumire": "aluat pizza",
@@ -412,6 +436,64 @@
                     "zaharuri": "0.35g",
                     "proteine": "12g",
                     "sare": "0.75g"
+                }
+            ]
+        },
+        {
+            "categorie": "shaorma",
+            "denumire": "shaorma cu de toate",
+            "cantitate": 750,
+            "pret": 32,
+            "id": 1,
+            "comanda": true,
+            "cantitiateComanda": 10,
+            "ingrediente":[
+                                { 
+                                    "denumire": "aluat pizza",
+                                    "gramaj": 300
+                                },
+                                { 
+                                    "denumire": "sos pizza",
+                                    "gramaj": 90
+                                },
+                                { 
+                                    "denumire": "mozarella",
+                                    "gramaj": 190
+                                },
+                                { 
+                                    "denumire": "carnati afumati",
+                                    "gramaj": 80
+                                },
+                                { 
+                                    "denumire": "sunca pizza",
+                                    "gramaj": 60
+                                },
+                                { 
+                                    "denumire": "masline negre",
+                                    "gramaj": 20
+                                },
+                                { 
+                                    "denumire": "ardei capia",
+                                    "gramaj": 30
+                                },
+                                { 
+                                    "denumire": "ceapa rosie",
+                                    "gramaj": 20
+                                },
+                                { 
+                                    "denumire": "porumb",
+                                    "gramaj": 20
+                                }
+            ],
+            "val_nut": [
+                {
+                    "valoare_energetica": "250KCal",
+                    "grasimi": "8g",
+                    "acizi_grasi_saturati": "44g",
+                    "glucide": "30g",
+                    "zaharuri": "0.45g",
+                    "proteine": "13g",
+                    "sare": "1g"
                 }
             ]
         }
