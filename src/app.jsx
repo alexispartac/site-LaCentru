@@ -1,4 +1,5 @@
 // intrebari
+// react Router https://www.w3schools.com/react/react_router.asp
 // ce este mai util, folosirea unei componente functionale sau de clasa
 // cum pot optimiza codul din TableProducts, partea cu useState, pot folosi useContext?
 
@@ -20,7 +21,7 @@ import { useState, useEffect } from 'react';
         );
     }
 
-    function Menu({activeMenu, setActiveMenu}){
+    function Menu({setActiveMenu}){
 
         return (
             <ul className="menu" >
@@ -33,11 +34,34 @@ import { useState, useEffect } from 'react';
         );
     }
 
-    function ButtonMenu({className, visible, onClick}){
+    function ButtonMenu({className, onClick}){
 
         return (
             <img src="/public/imagini/menu.png" className={className}  onClick={onClick} />
         );
+    }
+
+    
+    function Auth() {
+        const [name, setName] = useState("");
+
+        const handleSubmit = (event) => {
+            event.preventDefault();
+            alert(`The name you entered was: ${name}`)
+        }
+
+        return (
+                <form onSubmit={handleSubmit}>
+                <label>Enter your name:
+                    <input 
+                    type="text" 
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    />
+                </label>
+                <input type="submit" />
+                </form>
+        )
     }
 
     function MenuVertical({className, visible}){
@@ -199,7 +223,7 @@ import { useState, useEffect } from 'react';
             return (
                 <div style={{display:'block', padding:'10px', borderBottom:'1px solid black'}} className='preparat-comanda' key={preparat.id}>
                     <h4 style={{width:'25%', margin:'0', display:'inline'}}> {preparat.denumire.toUpperCase()} </h4>
-                    <h3 style={{width:'50px', margin:'0', display:'inline', float:'right'}}> x{preparat.cantitiateComanda} </h3>
+                        <h3 style={{width:'50px', margin:'0', display:'inline', float:'right'}}> x{preparat.cantitiateComanda} </h3>
                 </div>
             );
         }
@@ -306,23 +330,23 @@ import { useState, useEffect } from 'react';
                 <div className='continut'>
                     <h1> Program obisnuit </h1>
                     <ul className='lista-orar' >
-                        <LinieOrar key={zi} zi={'Luni'} orar={'09:00-23:00'}/>
-                        <LinieOrar key={zi} zi={'Marti'} orar={'09:00-23:00'}/>
-                        <LinieOrar key={zi} zi={'Miercuri'} orar={'09:00-23:00'}/>
-                        <LinieOrar key={zi} zi={'Joi'} orar={'09:00-23:00'}/>
-                        <LinieOrar key={zi} zi={'Vineri'} orar={'09:00-23:00'}/>
-                        <LinieOrar key={zi} zi={'Sambata'} orar={'12:00-23:00'} color={'red'}/>
-                        <LinieOrar key={zi} zi={'Duminica'} orar={'12:00-03:00'} color={'red'}/>
+                        <LinieOrar zi={'Luni'} orar={'09:00-23:00'}/>
+                        <LinieOrar zi={'Marti'} orar={'09:00-23:00'}/>
+                        <LinieOrar zi={'Miercuri'} orar={'09:00-23:00'}/>
+                        <LinieOrar zi={'Joi'} orar={'09:00-23:00'}/>
+                        <LinieOrar zi={'Vineri'} orar={'09:00-23:00'}/>
+                        <LinieOrar zi={'Sambata'} orar={'12:00-23:00'} color={'red'}/>
+                        <LinieOrar zi={'Duminica'} orar={'12:00-03:00'} color={'red'}/>
                     </ul >
                     <h1> Program Sarbatori </h1>
                     <ul className='lista-orar' >
-                        <LinieOrar key={zi} zi={'Luni'} orar={'12:00-20:00'}/>
-                        <LinieOrar key={zi} zi={'Marti'} orar={'12:00-20:00'}/>
-                        <LinieOrar key={zi} zi={'Miercuri'} orar={'12:00-20:00'}/>
-                        <LinieOrar key={zi} zi={'Joi'} orar={'12:00-20:00'}/>
-                        <LinieOrar key={zi} zi={'Vineri'} orar={'12:00-20:00'}/>
-                        <LinieOrar key={zi} zi={'Sambata'} orar={'12:00-19:00'} color={'red'}/>
-                        <LinieOrar key={zi} zi={'Duminica'} orar={'12:00-22:00'} color={'red'}/>
+                        <LinieOrar zi={'Luni'} orar={'12:00-20:00'}/>
+                        <LinieOrar zi={'Marti'} orar={'12:00-20:00'}/>
+                        <LinieOrar zi={'Miercuri'} orar={'12:00-20:00'}/>
+                        <LinieOrar zi={'Joi'} orar={'12:00-20:00'}/>
+                        <LinieOrar zi={'Vineri'} orar={'12:00-20:00'}/>
+                        <LinieOrar zi={'Sambata'} orar={'12:00-19:00'} color={'red'}/>
+                        <LinieOrar zi={'Duminica'} orar={'12:00-22:00'} color={'red'}/>
                     </ul>
                     <h1> Comenzile nu se preiau in afara programului!!!</h1>
                 </div>
@@ -338,7 +362,7 @@ import { useState, useEffect } from 'react';
             return (
                 <div className='continut'>
                     <h1> Contact </h1>
-                    <h3> Pntru comenzi telefonice sunati la numarul: 0739 941 614</h3>
+                    <h3> Pentru comenzi telefonice sunati la numarul: 0739 941 614</h3>
                     
                 </div>
             );

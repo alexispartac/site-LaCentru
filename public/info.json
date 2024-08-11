@@ -8,7 +8,7 @@
             "pret": 32,
             "id": 1,
             "comanda": false,
-            "cantitiateComanda": 10,
+            "cantitiateComanda": 0,
             "ingrediente":[
                                 { 
                                     "denumire": "aluat pizza",
