@@ -7,6 +7,7 @@
 // baza de date in mangoDb
 import React from 'react';
 import { useState, useEffect } from 'react';
+import Axios from "axios"
 
 // nav component
     function Logo(){
@@ -160,12 +161,16 @@ import { useState, useEffect } from 'react';
             const [data, setData] = useState(null);
             let meniu = [];
 
+            const getData = async() => {
+                const res = await Axios.get("http://localhost:8080/preparate/");
+                setData(res.data);
+                console.log(res.data)
+            }
+
             useEffect(() => {
-                fetch('/public/info.json')
-                .then(response => response.json())
-                .then(data => setData(data))
-                .catch(error => console.error('Error fetching data:', error));
+                getData()
             }, []);
+
 
             if (!data) {
             return <div>Loading...</div>;
@@ -233,11 +238,14 @@ import { useState, useEffect } from 'react';
             const [afiareComanda, setAfisareComanda] = useState(false);
             let comanda = [];
 
+            const getData = async() => {
+                const res = await Axios.get("http://localhost:8080/preparate/");
+                setData(res.data);
+                console.log(res.data)
+            }
+
             useEffect(() => {
-                fetch('/public/info.json')
-                .then(response => response.json())
-                .then(data => setData(data))
-                .catch(error => console.error('Error fetching data:', error));
+                getData()
             }, []);
 
             if (!data) {
