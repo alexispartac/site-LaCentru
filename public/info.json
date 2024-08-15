@@ -7,7 +7,7 @@
             "cantitate": 750,
             "pret": 32,
             "id": 1,
-            "comanda": false,
+            
             "cantitiateComanda": 0,
             "ingrediente":[
                                 { 
@@ -66,7 +66,7 @@
             "cantitate": 750,
             "pret": 30,
             "id":2,
-            "comanda": true,
+             
             "cantitiateComanda": 1,
             "ingrediente":[
                                 { 
@@ -121,7 +121,7 @@
             "cantitate": 710,
             "pret": 31,
             "id": 3,
-            "comanda": true,
+            
             "cantitiateComanda": 10,
             "ingrediente":[
                                 { 
@@ -172,7 +172,7 @@
             "cantitate": 730,
             "pret": 32,
             "id": 4,
-            "comanda": true,
+            
             "cantitiateComanda": 10,
             "ingrediente":[
                                 { 
@@ -234,7 +234,7 @@
             "cantitate": 670,
             "pret": 29,
             "id": 5,
-            "comanda": true,
+            
             "cantitiateComanda": 10,
             "ingrediente":[
                                 { 
@@ -289,7 +289,7 @@
             "cantitate": 660,
             "pret": 28,
             "id": 6,
-            "comanda": true,
+            
             "cantitiateComanda": 10,
             "ingrediente":[
                                 { 
@@ -340,7 +340,7 @@
             "cantitate": 620,
             "pret": 29,
             "id": 7,
-            "comanda": true,
+            
             "cantitiateComanda": 10,
             "ingrediente":[
                                 { 
@@ -383,7 +383,7 @@
             "cantitate": 710,
             "pret": 32,
             "id": 9,
-            "comanda": true,
+            
             "cantitiateComanda": 10,
             "ingrediente":[
                                 { 
@@ -445,7 +445,7 @@
             "cantitate": 750,
             "pret": 32,
             "id": 1,
-            "comanda": true,
+            
             "cantitiateComanda": 10,
             "ingrediente":[
                                 { 

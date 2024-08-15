@@ -113,11 +113,11 @@ import Axios from "axios"
     // end UI Acasa
 
     // UI Meniu
-        function Preparat({preparat}){
+        function Preparat({preparat, setData}){
             const [count, setCount] = useState(0);
 
             return (
-                <div className='continer-prep' key={preparat.id}>
+                <div className='continer-prep' key={preparat._id}>
                     <h2 style={{textAlign:"left"}}>{preparat.denumire.toUpperCase()}</h2>
                     <img src={preparat.imagine} alt="img" style={{width:"100px", height:"100px"}}/>
                     <h4>Cantitate: {preparat.cantitate}g</h4>
@@ -145,11 +145,15 @@ import Axios from "axios"
                         })}
                     </h4>
                     <div className='submit-info'>
-                        <button type="submit" key={preparat.id} onClick={() => setCount(count + 1)}>
+                        <button type="submit" key={preparat._id} onClick={() => 
+                            {
+                                setCount(count + 1);
+                            }
+                            }>
                             {/* {cantitate adaugata la comanda} */}
                             Adauga la comanda
                         </button>
-                        <div className={ count !== 0 ? 'numaratoare ' : ''} key={preparat.id} onClick={() => setCount(count-1)}>
+                        <div className={ count !== 0 ? 'numaratoare ' : ''} key={preparat._id} onClick={() => setCount(count-1)}>
                             { count ? <h3 > x{ count }</h3> : null}
                         </div>
                     </div>
@@ -162,13 +166,12 @@ import Axios from "axios"
             let meniu = [];
 
             const getData = async() => {
-                const res = await Axios.get("http://localhost:8080/preparate/");
+                const res = await Axios.get("http://localhost:8080/preparate/preparate-meniu");
                 setData(res.data);
-                console.log(res.data)
             }
 
             useEffect(() => {
-                getData()
+                getData();
             }, []);
 
 
@@ -180,15 +183,29 @@ import Axios from "axios"
             if( !check1 )
                 ;
             else  {
-                data.preparate.map(preparat => preparat.categorie === 'pizza' ? meniu.push(<Preparat key={preparat.denumire} preparat={preparat} />) : null )
+                data.preparate.map(preparat => preparat.categorie === 'pizza' ? meniu.push(<Preparat 
+                    key={preparat._id} 
+                    preparat={preparat}
+                    setData={setData} />) : null )
             }
             
             if( !check2 )
                 ;
             else  { 
-                data.preparate.map(preparat => preparat.categorie === 'shaorma' ?  meniu.push(<Preparat key={preparat.denumire} preparat={preparat} />) : null )
+                data.preparate.map(preparat => preparat.categorie === 'shaorma' ?  meniu.push(<Preparat 
+                    key={preparat._id} 
+                    preparat={preparat}
+                    setData={setData} />) : null )
             }
 
+            if( !check3 )
+                ;
+            else  { 
+                data.preparate.map(preparat => preparat.categorie === 'a' ?  meniu.push(<Preparat 
+                    key={preparat._id} 
+                    preparat={preparat}
+                    setData={setData} />) : null )
+            }
 
             return ( 
                 <div className='continut' style={{margin:'0px'}}>
@@ -218,7 +235,7 @@ import Axios from "axios"
                         <legend style={{fontSize:'20px'}}>Selecteaza ce doresti sa comanzi </legend>
                         <Selectie key='pizza' categorie="pizza" check={check1} setCheck={setCheck1} />
                         <Selectie key='shaorma' categorie="shaorma" check={check2} setCheck={setCheck2} />
-                        <Selectie key='altele' categorie="altele" check={check3} setCheck={setCheck3} />
+                        <Selectie key='altele' categorie="a" check={check3} setCheck={setCheck3} />
                     </fieldset>
                 </div>
             );
@@ -226,7 +243,7 @@ import Axios from "axios"
 
         function PreparatComanda({preparat}){
             return (
-                <div style={{display:'block', padding:'10px', borderBottom:'1px solid black'}} className='preparat-comanda' key={preparat.id}>
+                <div style={{display:'block', padding:'10px', borderBottom:'1px solid black'}} className='preparat-comanda' key={preparat._id}>
                     <h4 style={{width:'25%', margin:'0', display:'inline'}}> {preparat.denumire.toUpperCase()} </h4>
                         <h3 style={{width:'50px', margin:'0', display:'inline', float:'right'}}> x{preparat.cantitiateComanda} </h3>
                 </div>
@@ -239,20 +256,19 @@ import Axios from "axios"
             let comanda = [];
 
             const getData = async() => {
-                const res = await Axios.get("http://localhost:8080/preparate/");
+                const res = await Axios.get("http://localhost:8080/preparate/preparate-comanda");
                 setData(res.data);
-                console.log(res.data)
             }
 
             useEffect(() => {
-                getData()
+                getData();
             }, []);
 
             if (!data) {
             return <div>Loading...</div>;
             }
 
-            data.preparate.map( preparat => preparat.comanda === true ? comanda.push(<PreparatComanda preparat={preparat}/>) : null)
+            data.preparateComanda.map( preparat => preparat.comanda === true ? comanda.push(<PreparatComanda preparat={preparat}/>) : null)
 
             return (
                 <div style={{width:'100%', display:'flex' }}>
