@@ -1,16 +1,14 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, useEffect, createContext} from "react";
 import Axios from 'axios'
-
-
-export const CartContext = createContext();
+import { CartContext } from "./ModuleContext";
 
 export const CartProvider = ({childern}) => {
     const [cartItems, setCartItems] = useState([]);
 
-
     const getCartItems = async() => {
         const response = await Axios.get("http://localhost:8080/preparate/preparate-meniu");
-        setCartItems(response.data.preparate)
+        const data = response.data;
+        setCartItems(data.preparate)
     }
 
     useEffect(() => {
@@ -80,3 +78,5 @@ export const CartProvider = ({childern}) => {
     )
 
 }
+
+

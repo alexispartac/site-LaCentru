@@ -6,9 +6,9 @@
 
 // baza de date in mangoDb
 import React from 'react';
-import { useState, useEffect } from 'react';
-import Axios from "axios"
-import Products from './components/Products'
+import { useState } from 'react';
+import Products from './components/Products.jsx'
+import Cart from './components/Cart.jsx';
 // nav component
     function Logo(){
         return (
@@ -30,7 +30,7 @@ import Products from './components/Products'
                 <Text  onClick={() => setActiveMenu(1)} > Meniu </Text>
                 <Text  onClick={() => setActiveMenu(2)} > Program </Text>
                 <Text  onClick={() => setActiveMenu(3)} > Contact </Text>
-                <Text  onClick={() => setActiveMenu(4)} > Despre </Text>
+                <Text  onClick={() => setActiveMenu(4)} > Comanda mea </Text>
             </ul>
         );
     }
@@ -40,28 +40,6 @@ import Products from './components/Products'
         return (
             <img src="/public/imagini/menu.png" className={className}  onClick={onClick} />
         );
-    }
-
-    function Auth() {
-        const [name, setName] = useState("");
-
-        const handleSubmit = (event) => {
-            event.preventDefault();
-            alert(`The name you entered was: ${name}`)
-        }
-
-        return (
-                <form onSubmit={handleSubmit}>
-                <label>Enter your name:
-                    <input 
-                    type="text" 
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    />
-                </label>
-                <input type="submit" />
-                </form>
-        )
     }
 
     function MenuVertical({className, visible}){
@@ -80,7 +58,7 @@ import Products from './components/Products'
     }
 
     function Nav({activeMenu, setActiveMenu}){
-        let [visible, setVisible] = useState(true)
+        let [visible, setVisible] = useState(false)
 
         return (
             <div className="nav" >
@@ -107,219 +85,6 @@ import Products from './components/Products'
 
 // Content
 
-    // UI Acasa
-
-    // end UI Acasa
-
-    // UI Meniu
-        function Preparat({preparat}){
-
-            return (
-                <div className='continer-prep' key={preparat._id}>
-                    <h2 style={{textAlign:"left"}}>{preparat.denumire.toUpperCase()}</h2>
-                    <img src={preparat.imagine} alt="img" style={{width:"100px", height:"100px"}}/>
-                    <h4>Cantitate: {preparat.cantitate}g</h4>
-                    <h4 style={{color:'rgba(166, 98, 6, 0.842)', fontSize:'22px'}}>Pret: {preparat.pret + ' lei'}</h4>
-                    <h4 className='restrans'>Ingrediente:            {/* restrangere */}
-                        {preparat.ingrediente.map(ingredient => {
-                            return (
-                                <p className='val'>- {ingredient.denumire}: {ingredient.gramaj} g</p>
-                            );
-                        })}
-                    </h4>
-                    <h4 className='restrans'>Valori nutritionale per 100g:  {/* restrangere */}
-                        {preparat.val_nut.map(ingredient => {
-                            return (
-                                <div className='val'>
-                                    <p>- valoare energetica: {ingredient.valoare_energetica} g</p>
-                                    <p>- grasimi: {ingredient.grasimi} g</p>
-                                    <p>- acizi grasi saturati: {ingredient.acizi_grasi_saturati} g</p>
-                                    <p>- glucide: {ingredient.glucide} g</p>
-                                    <p>- zaharuri: {ingredient.zaharuri} g</p>
-                                    <p>- proteine: {ingredient.proteine} g</p>
-                                    <p>- sare: {ingredient.grasimi} g</p>
-                                </div>
-                            );
-                        })}
-                    </h4>
-                    <div className='submit-info'>
-                        <button>
-                            Adauga la comanda
-                        </button>
-                    </div>
-                </div>
-            );
-        }
-
-        function TableProducts({check1, check2, check3}){
-            const [data, setData] = useState(null);
-            let meniu = [];
-
-            const getData = async() => {
-                const res = await Axios.get("http://localhost:8080/preparate/preparate-meniu");
-                setData(res.data);
-            }
-
-            useEffect(() => {
-                getData();
-            }, []);
-
-
-            if (!data) {
-            return <div>Loading...</div>;
-            }
-
-            
-            if( !check1 )
-                ;
-            else  {
-                data.preparate.map(preparat => preparat.categorie === 'pizza' ? meniu.push(<Preparat 
-                    key={preparat._id} 
-                    preparat={preparat}
-                    setData={setData} />) : null )
-            }
-            
-            if( !check2 )
-                ;
-            else  { 
-                data.preparate.map(preparat => preparat.categorie === 'shaorma' ?  meniu.push(<Preparat 
-                    key={preparat._id} 
-                    preparat={preparat}
-                    setData={setData} />) : null )
-            }
-
-            if( !check3 )
-                ;
-            else  { 
-                data.preparate.map(preparat => preparat.categorie === 'a' ?  meniu.push(<Preparat 
-                    key={preparat._id} 
-                    preparat={preparat}
-                    setData={setData} />) : null )
-            }
-
-            return ( 
-                <div className='continut' style={{margin:'0px'}}>
-                    {
-                        meniu.length !== 0 ? meniu : 
-                        <h1 > Selecteaza o categorie!</h1>
-                    }
-                </div>
-            );
-        }
-
-        function Selectie({categorie, check, setCheck}){
-
-            return (                               // e bine ca inputul sa fie intr un label dar se poate folosi si htmlFor
-                <div id='cl'>
-                    <input type="checkbox" id={categorie} name={categorie} defaultChecked={true} value={check} onChange={() => setCheck(!check)}/>           
-                    <label style={{textTransform: 'capitalize'}} htmlFor={categorie}>{categorie}</label>
-                </div>
-            );
-        }
-
-        function CheckBox({check1, setCheck1, check2, setCheck2, check3, setCheck3}){
-
-            return (
-                <div className='search-bar'>
-                    <fieldset>
-                        <legend style={{fontSize:'20px'}}>Selecteaza ce doresti sa comanzi </legend>
-                        <Selectie key='pizza' categorie="pizza" check={check1} setCheck={setCheck1} />
-                        <Selectie key='shaorma' categorie="shaorma" check={check2} setCheck={setCheck2} />
-                        <Selectie key='altele' categorie="a" check={check3} setCheck={setCheck3} />
-                    </fieldset>
-                </div>
-            );
-        }
-
-        function PreparatComanda({preparat}){
-            return (
-                <div style={{display:'block', padding:'10px', borderBottom:'1px solid black'}} className='preparat-comanda' key={preparat._id}>
-                    <h4 style={{width:'25%', margin:'0', display:'inline'}}> {preparat.denumire.toUpperCase()} </h4>
-                        <h3 style={{width:'50px', margin:'0', display:'inline', float:'right'}}> x{preparat.cantitiateComanda} </h3>
-                </div>
-            );
-        }
-
-        function Comanda(){
-            const [data, setData] = useState(null);
-            const [afiareComanda, setAfisareComanda] = useState(false);
-            let comanda = [];
-
-            const getData = async() => {
-                const res = await Axios.get("http://localhost:8080/preparate/preparate-comanda");
-                setData(res.data);
-            }
-
-            useEffect(() => {
-                getData();
-            }, []);
-
-            if (!data) {
-            return <div>Loading...</div>;
-            }
-
-            data.preparateComanda.map( preparat => preparat.comanda === true ? comanda.push(<PreparatComanda preparat={preparat}/>) : null)
-
-            return (
-                <div style={{width:'100%', display:'flex' }}>
-                        <button className='button-comanda' 
-                                onClick={() => setAfisareComanda(!afiareComanda)}>
-                            Comanda mea 
-                        </button>
-                    <div className={`comanda ${ afiareComanda ? 'visible' : ''}`} >
-                        <fieldset style={{width:'100%', display:'inline-block', margin:'20px', height:'500px'}}>
-                            <legend style={{fontSize:'20px'}}>Comanda mea</legend>
-                            { comanda.length > 0 ? 
-                                <div>
-                                    <h4>
-                                        {comanda}
-                                    </h4>
-                                    <h3>Total de plata: ...</h3>
-                                    <button className={`button-finalizare ${ afiareComanda ? 'visible' : ''}`}> Plateste </button>
-                                </div> 
-                                : 
-                                <div>
-                                    <h3>
-                                        Comanda ta este goala!
-                                    </h3>
-                                </div>
-                            }
-                        </fieldset >
-                    </div>
-
-                </div>
-            );
-
-        }
-
-        function InfoMeniu(){
-            const [check1, setCheck1] = useState(true);
-            const [check2, setCheck2] = useState(true);
-            const [check3, setCheck3] = useState(true);
-
-                
-            return (
-            <div className='continut'>
-                    <h1>Meniu</h1>
-                    {/* Selectare afisare produse */}
-                    <CheckBox 
-                        check1={check1} setCheck1={setCheck1}
-                        check2={check2} setCheck2={setCheck2}
-                        check3={check3} setCheck3={setCheck3}
-                    />
-                    {/* Tabelul vu produse dupa interogare */}
-                    <TableProducts 
-                        check1={check1}
-                        check2={check2}
-                        check3={check3}
-                    />
-                    {/* Comanda finala */}
-                    <Comanda />
-
-            </div>
-            );
-        }
-    // end UI Meniu
 
     // UI Program
 
@@ -395,10 +160,13 @@ import Products from './components/Products'
     }
 
     function Meniu({className, active}){
+
         if(active === 1)
             return (
                 <div className={className} >
-                    <InfoMeniu /> 
+                    <div className='continut'>
+                        <Products/>
+                    </div> 
                 </div>
             );
     }
@@ -423,11 +191,12 @@ import Products from './components/Products'
             );
     }
 
-    function Despre({className, active}){
+    function ComandaMea({className, active}){
 
         if(active === 4)
             return (
                 <div className={className} >
+                    <Cart/>
                 </div>
             );
     }
@@ -440,7 +209,7 @@ import Products from './components/Products'
                 <Meniu className="meniu" active={activeMenu} />
                 <Program className="program" active={activeMenu} />
                 <Contact className="contact" active={activeMenu} />
-                <Despre className="despre" active={activeMenu} />
+                <ComandaMea className="comanda-mea" active={activeMenu} />
             </div>
         );
     }

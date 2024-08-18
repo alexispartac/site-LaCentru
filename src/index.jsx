@@ -3,13 +3,13 @@ import { createRoot } from "react-dom/client";
 import "./styles.css";
 
 import App from "./app";
-import { CartProvider } from "./context/ContextCart";
+import { CartProvider } from "./context/cart";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
-  <CartProvider>
     <StrictMode>
-      <App />
+      <CartProvider>
+        <App />
+      </CartProvider>  
     </StrictMode>
-  </CartProvider>
 );

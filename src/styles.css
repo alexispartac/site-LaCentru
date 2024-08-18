@@ -291,3 +291,19 @@ footer p{
     visibility: visible;
 }
 /* content end */
+
+/* cart start*/
+.comanda-mea{
+    width: inherit;
+    margin: 50px 50px;
+}
+
+.cart {
+    display: flex;
+    width: 100%;
+    position: relative;
+    background-color: var(--continerColor);
+    padding: 50px 100px ;
+    color: white;
+}
+/* cart end */

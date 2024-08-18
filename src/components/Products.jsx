@@ -1,27 +1,28 @@
 import Axios from 'axios'
-import { useEffect, useState } from 'react';
-
+import { useEffect, useState, useContext } from 'react';
+import { CartContext } from '../context/ModuleContext';
 
 export default function Products(){
-    const [data, setData] = useState(null);
-    let meniu = [];
+    const [products, setProducts] = useState(null);
+    const {cartItems, addCartItem} = useContext(CartContext);
 
-    const getData = async() => {
-        const res = await Axios.get("http://localhost:8080/preparate/preparate-meniu");
-        setData(res.data);
+    const getProducts = async() => {
+        const response = await Axios.get("http://localhost:8080/preparate/preparate-meniu");
+        setProducts(response.data.preparate);
     }
 
     useEffect(() => {
-        getData();
+        getProducts()
     }, []);
 
-    if (!data) {
-        return <div>Loading...</div>;
-    }else
-        meniu = data;
+    if (!products) {
+        return <div style={{fontSize:"24px"}}>
+            Error 404
+            </div>;
+    }
 
-    return (
-        meniu.preparate.map(preparat => 
+    return (     
+        products.map(preparat => 
         <div className='continer-prep' key={preparat._id}>
             <h2 style={{textAlign:"left"}}>{preparat.denumire.toUpperCase()}</h2>
             <img src={preparat.imagine} alt="img" style={{width:"100px", height:"100px"}}/>
@@ -50,7 +51,9 @@ export default function Products(){
                 })}
             </h4>
             <div className='submit-info'>
-                <button>
+                <button 
+                    onClick={() => console.log(typeof addCartItem)}
+                    >
                     Adauga la comanda
                 </button>
             </div>
@@ -59,3 +62,5 @@ export default function Products(){
     );
     
 }
+
+
