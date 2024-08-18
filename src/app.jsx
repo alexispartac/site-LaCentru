@@ -8,7 +8,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import Axios from "axios"
-
+import Products from './components/Products'
 // nav component
     function Logo(){
         return (
@@ -42,7 +42,6 @@ import Axios from "axios"
         );
     }
 
-    
     function Auth() {
         const [name, setName] = useState("");
 
@@ -113,8 +112,7 @@ import Axios from "axios"
     // end UI Acasa
 
     // UI Meniu
-        function Preparat({preparat, setData}){
-            const [count, setCount] = useState(0);
+        function Preparat({preparat}){
 
             return (
                 <div className='continer-prep' key={preparat._id}>
@@ -145,17 +143,9 @@ import Axios from "axios"
                         })}
                     </h4>
                     <div className='submit-info'>
-                        <button type="submit" key={preparat._id} onClick={() => 
-                            {
-                                setCount(count + 1);
-                            }
-                            }>
-                            {/* {cantitate adaugata la comanda} */}
+                        <button>
                             Adauga la comanda
                         </button>
-                        <div className={ count !== 0 ? 'numaratoare ' : ''} key={preparat._id} onClick={() => setCount(count-1)}>
-                            { count ? <h3 > x{ count }</h3> : null}
-                        </div>
                     </div>
                 </div>
             );
@@ -325,6 +315,7 @@ import Axios from "axios"
                     />
                     {/* Comanda finala */}
                     <Comanda />
+
             </div>
             );
         }
