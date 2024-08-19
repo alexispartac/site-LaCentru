@@ -2,27 +2,25 @@ import { useState, useEffect, createContext} from "react";
 import Axios from 'axios'
 import { CartContext } from "./ModuleContext";
 
-export const CartProvider = ({childern}) => {
+export const CartProvider = ({children}) => {
     const [cartItems, setCartItems] = useState([]);
 
-    const getCartItems = async() => {
-        const response = await Axios.get("http://localhost:8080/preparate/preparate-meniu");
-        const data = response.data;
-        setCartItems(data.preparate)
-    }
+    // const getCartItems = async() => {
+    //     const response = await Axios.get("http://localhost:8080/preparate/preparate-meniu");
+    //     const data = response.data;
+    //     setCartItems(data.preparate)
+    // }
 
-    useEffect(() => {
-        getCartItems();
-    }, []);
+    // useEffect(() => {
+    //     getCartItems();
+    // }, []);
 
 
-    if (!cartItems) {
-    return <div>Cosul este gol---eroare la request</div>;
-    }
+
 
     const addCartItem = (item) => {
         const isItemsInCart = cartItems.find( cartItem => cartItem._id === item._id);
-
+        
         if(isItemsInCart)
             setCartItems(
                 cartItems.map( cartItem => cartItem._id === item._id
@@ -73,7 +71,7 @@ export const CartProvider = ({childern}) => {
             totalCart
             }
         }>
-            {childern}
+            {children}
         </CartContext.Provider>
     )
 

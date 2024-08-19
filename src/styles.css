@@ -213,7 +213,7 @@ footer p{
     
 }
 
-.continer-prep button{
+.continer-prep button, .sterge-comanda{
     width: 200px;
     height: 50px;
     margin: auto;
@@ -226,7 +226,7 @@ footer p{
     bottom: 10px;
 }
 
-.continer-prep button:hover, .numaratoare:hover, .button-comanda:hover, .button-finalizare:hover{
+.continer-prep button:hover, .numaratoare:hover, .button-comanda:hover, .button-finalizare:hover, .sterge-comanda:hover{
     border: 2px solid var(--continerColor);
     background-color: var(--hoverColor);
     color: var(--continerColor);
@@ -299,7 +299,6 @@ footer p{
 }
 
 .cart {
-    display: flex;
     width: 100%;
     position: relative;
     background-color: var(--continerColor);

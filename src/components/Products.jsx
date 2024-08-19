@@ -3,7 +3,7 @@ import { useEffect, useState, useContext } from 'react';
 import { CartContext } from '../context/ModuleContext';
 
 export default function Products(){
-    const [products, setProducts] = useState(null);
+    const [products, setProducts] = useState([]);
     const {cartItems, addCartItem} = useContext(CartContext);
 
     const getProducts = async() => {
@@ -52,9 +52,9 @@ export default function Products(){
             </h4>
             <div className='submit-info'>
                 <button 
-                    onClick={() => console.log(typeof addCartItem)}
+                    onClick={() => {addCartItem(preparat); alert('Produsul a fost adaugat la comanda ta!')}}
                     >
-                    Adauga la comanda
+                    Adauga la comanda 
                 </button>
             </div>
         </div>
